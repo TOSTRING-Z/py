@@ -1,4 +1,5 @@
-function hash(r,_gtk){
+function hash(r){
+	_gtk = '320305.131321201';
 	function a(r,o){
 		for(var t=0;t<o.length-2;t+=3){
 			var a=o.charAt(t+2);

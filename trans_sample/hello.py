@@ -58,9 +58,8 @@ def fan_yi(event):
         text_result.insert(INSERT,
                            "\n".join([f"Periodical:{res[v][p]}\tIF:{res[v][i]}" for v, (p, i) in enumerate(res)]))
     else:
-        with open(path_relative + '/www/sign.js', 'r', encoding='utf8') as h:
+        with open(path_relative + '/www/sign_m.js', 'r', encoding='utf8') as h:
             hash = h.read()
-        gtk = '320305.131321201'
 
         # 判断模式
         # with open(path_relative+'/www/static.json','r',encoding= 'utf8') as h:
@@ -92,7 +91,7 @@ def fan_yi(event):
         content = re.sub('[\s^\n]{2,}', ' ', content)
         content = re.sub('\n{1,}', ' ', content)
         hash = js2py.eval_js(hash)
-        sign = hash(content, gtk)
+        sign = hash(content)
 
         params = {
             'from': mo_shi(content)[0],
